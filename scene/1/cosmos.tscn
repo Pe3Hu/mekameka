@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg4mg5aiqjp63"]
+
+[ext_resource type="Script" path="res://scene/1/cosmos.gd" id="1_piy68"]
+
+[node name="Cosmos" type="Node2D" node_paths=PackedStringArray("borderlines", "ships", "trajectories")]
+script = ExtResource("1_piy68")
+borderlines = NodePath("Borderlines")
+ships = NodePath("Ships")
+trajectories = NodePath("Trajectories")
+
+[node name="Trajectories" type="Node2D" parent="."]
+
+[node name="Ships" type="Node2D" parent="."]
+
+[node name="Borderlines" type="Node2D" parent="."]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://joo28tj2kl3j"]
+
+[ext_resource type="Script" path="res://scene/2/trajectory.gd" id="1_uh725"]
+
+[node name="Trajectory" type="Line2D"]
+width = 1.0
+default_color = Color(0.362829, 0.362829, 0.362829, 1)
+script = ExtResource("1_uh725")

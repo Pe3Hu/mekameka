@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4kt5hfscugyv"]
+
+[ext_resource type="Script" path="res://scene/2/ship.gd" id="1_xfbas"]
+[ext_resource type="PackedScene" uid="uid://joo28tj2kl3j" path="res://scene/2/trajectory.tscn" id="2_tfl05"]
+
+[node name="Ship" type="CharacterBody2D"]
+script = ExtResource("1_xfbas")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(20, -20, 20, 20, -20, 20, -20, -20)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(20, -20, 20, 20, -20, 20, -20, -20)
+
+[node name="Trajectory" parent="." instance=ExtResource("2_tfl05")]
