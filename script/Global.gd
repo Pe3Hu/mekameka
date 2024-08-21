@@ -147,8 +147,15 @@ func init_window_size():
 	vec.size.window.center = Vector2(vec.size.window.width/2, vec.size.window.height/2)
 	
 func init_color():
-	#var h = 360.0
-	pass
+	var h = 360.0
+	
+	color = {}
+	color.compartment = {}
+	color.compartment["cover"] = Color.from_hsv(0.0 / h, 0.9, 0.9)
+	color.compartment["storage"] = Color.from_hsv(60.0 / h, 0.9, 0.9)
+	color.compartment["engine"] = Color.from_hsv(120.0 / h, 0.9, 0.9)
+	color.compartment["pump"] = Color.from_hsv(210.0 / h, 0.9, 0.9)
+	color.compartment["gun"] = Color.from_hsv(270.0 / h, 0.9, 0.9)
 	
 func save(path_: String, data_: String):
 	var path = path_ + ".json"

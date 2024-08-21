@@ -1,4 +1,4 @@
-class_name Cosmos extends Node2D
+class_name Cosmos extends PanelContainer
 
 
 @export var world: World
@@ -22,17 +22,11 @@ func _ready() -> void:
 func init_borderlines() -> void:
 	for side in resource.borderlines:
 		var borderline_resource = resource.borderlines[side]
-		add_borderline(borderline_resource)
-	
-func add_borderline(resource_: BorderlineResource) -> void:
-	var borderline = borderline_scene.instantiate()
-	borderline.set_cosmos(self).set_resource(resource_)
+		var borderline = borderline_scene.instantiate()
+		borderline.set_cosmos(self).set_resource(borderline_resource)
 	
 func init_corporations() -> void:
 	for corporation_resource in resource.corporations:
 		for ship_resource in corporation_resource.ships:
-			add_ship(ship_resource)
-	
-func add_ship(resource_: ShipResource) -> void:
-	var ship = ship_scene.instantiate()
-	ship.set_resource(resource_).set_cosmos(self)
+			var ship = ship_scene.instantiate()
+			ship.set_resource(ship_resource).set_cosmos(self)

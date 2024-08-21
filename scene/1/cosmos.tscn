@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg4mg5aiqjp63"]
+[gd_scene load_steps=3 format=3 uid="uid://dg4mg5aiqjp63"]
 
 [ext_resource type="Script" path="res://scene/1/cosmos.gd" id="1_piy68"]
+[ext_resource type="PackedScene" uid="uid://d0fisysmc2mis" path="res://scene/3/weapon.tscn" id="2_712w7"]
 
-[node name="Cosmos" type="Node2D" node_paths=PackedStringArray("borderlines", "ships", "trajectories")]
+[node name="Cosmos" type="PanelContainer" node_paths=PackedStringArray("borderlines", "ships", "trajectories")]
 script = ExtResource("1_piy68")
 borderlines = NodePath("Borderlines")
 ships = NodePath("Ships")
@@ -13,3 +14,6 @@ trajectories = NodePath("Trajectories")
 [node name="Ships" type="Node2D" parent="."]
 
 [node name="Borderlines" type="Node2D" parent="."]
+
+[node name="Weapon" parent="." instance=ExtResource("2_712w7")]
+position = Vector2(100, 100)

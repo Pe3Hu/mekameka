@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqagjbrjdl41k"]
+
+[ext_resource type="Script" path="res://scene/3/bullet.gd" id="1_djexp"]
+
+[node name="Bullet" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_djexp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(10, 0, 0, -5, 0, 5)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(10, 0, 0, -5, 0, 5)
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]

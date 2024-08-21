@@ -3,13 +3,21 @@
 [ext_resource type="Script" path="res://scene/2/ship.gd" id="1_xfbas"]
 [ext_resource type="PackedScene" uid="uid://joo28tj2kl3j" path="res://scene/2/trajectory.tscn" id="2_tfl05"]
 
-[node name="Ship" type="CharacterBody2D"]
+[node name="Ship" type="CharacterBody2D" node_paths=PackedStringArray("compartments")]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_xfbas")
+compartments = NodePath("Compartments")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(20, -20, 20, 20, -20, 20, -20, -20)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(20, -20, 20, 20, -20, 20, -20, -20)
 
+[node name="Compartments" type="Node2D" parent="."]
+
 [node name="Trajectory" parent="." instance=ExtResource("2_tfl05")]
+visible = false

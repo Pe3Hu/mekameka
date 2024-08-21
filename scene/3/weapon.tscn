@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0fisysmc2mis"]
+
+[ext_resource type="Script" path="res://scene/3/weapon.gd" id="1_1yghc"]
+
+[node name="Weapon" type="Node2D" node_paths=PackedStringArray("barrels", "polygon", "delay_timer")]
+rotation = 3.14159
+script = ExtResource("1_1yghc")
+barrels = NodePath("Polygon2D/Barrels")
+polygon = NodePath("Polygon2D")
+delay_timer = NodePath("DelayTimer")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.27, 0.5255, 1, 1)
+polygon = PackedVector2Array(20, 0, 0, 10, 0, -10)
+
+[node name="Barrels" type="Node2D" parent="Polygon2D"]
+
+[node name="BulletSpawnMarker" type="Marker2D" parent="Polygon2D/Barrels"]
+position = Vector2(20, 0)
+
+[node name="DelayTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="DelayTimer" to="." method="_on_delay_timer_timeout"]

@@ -6,10 +6,7 @@
 [node name="World" type="Node2D" node_paths=PackedStringArray("cosmos")]
 y_sort_enabled = true
 script = ExtResource("1_sbgiu")
-cosmos = NodePath("Cosmos")
-
-[node name="Cosmos" parent="." node_paths=PackedStringArray("world") instance=ExtResource("2_convr")]
-world = NodePath("..")
+cosmos = NodePath("CanvasLayer/HBox/Cosmos")
 
 [node name="FPS" type="Label" parent="."]
 visible = false
@@ -18,3 +15,24 @@ offset_bottom = 23.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Cosmos" parent="CanvasLayer/HBox" node_paths=PackedStringArray("world") instance=ExtResource("2_convr")]
+layout_mode = 2
+world = NodePath("../../..")

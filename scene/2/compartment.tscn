@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ui2ptxiu0gm"]
+
+[ext_resource type="Script" path="res://scene/2/compartment.gd" id="1_lje6c"]
+
+[node name="Compartment" type="CharacterBody2D" node_paths=PackedStringArray("polygon", "collision_polygon")]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_lje6c")
+polygon = NodePath("Polygon")
+collision_polygon = NodePath("CollisionPolygon2D")
+
+[node name="Polygon" type="Polygon2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
